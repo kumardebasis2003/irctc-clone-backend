@@ -6,6 +6,7 @@ from django.urls import path
 from irctc.views import auth as auth_views
 from irctc.views import train as train_views
 from irctc.views import booking as booking_views
+from irctc.views import analytics as analytics_views
 
 app_name = "irctc"
 
@@ -33,4 +34,8 @@ urlpatterns = [
     #path("bookings/<int:booking_id>/", booking_views.BookingDetailView.as_view(), name="booking-detail"),
     path("bookings/<int:booking_id>/cancel/", booking_views.BookingCancelView.as_view(), name="booking-cancel"),
     #path("bookings/all/", booking_views.AllBookingsView.as_view(), name="all-bookings"),
+    
+    # ==================== Analytics APIs ==================== #
+    path("analytics/top-routes/", analytics_views.TopRoutesAnalyticsView.as_view(), name="top-routes"),
+    path("analytics/my-searches/", analytics_views.UserSearchAnalyticsView.as_view(), name="my-searches"),
 ]

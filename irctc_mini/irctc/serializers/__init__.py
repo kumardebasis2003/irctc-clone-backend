@@ -23,6 +23,12 @@ from .booking import (
     BookingCancelSerializer,
 )
 
+from .analytics import (  
+    TopRouteSerializer,
+    UserSearchStatsSerializer,
+)
+
+
 __all__ = [
     # Auth serializers
     'UserSerializer',
